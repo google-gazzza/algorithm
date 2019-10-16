@@ -1,0 +1,2 @@
+# leetcode
+try to algorithms
