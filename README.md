@@ -82,6 +82,37 @@ feature/koronya-177 요론식으로.
 문제의 URL과, PR의 URL을 같이 보내서 문제 풀었다 라는 것을 알리자!  
 
 
+## 잡다구리 정리
+
+### 특정 repository에서 내 자신의 repository로 Fork 따기!
+
+보통, 오픈소스 작업을 할 때, 해당 repository에 직접 push를 하기보다는(전혀 모르는 사람한테 권한을 줄리가 없음)  
+해당 repository를 자신의 repository에 그대로 복사한 후에(이를 Fork 딴다고 함)  
+내 자신의 repository에서 뭔가 작업을 하고, 로컬에서 커밋 & 내 repository에 push를 한 다음에  
+해당 repository에 PR을 날린다.
+내가 이 작업 했으니, 너의 repository에 합쳐줘~, 땡겨줘~  
+그래서 Pull Request  
+그럼 어떻게 Fork를 따느냐...  
+그냥, 따고자 하는 repository에 들어가서  
+지금 우리 같은 경우는 https://github.com/googler-gazzzza/leetcode 에 들어가서
+제일 오른쪽에 있는 Fork를 누르면 된다!
+![2019-10-19 at 12 32 AM](https://user-images.githubusercontent.com/26019796/67107768-9bb53300-f1bc-11e9-9c7d-3e756397c42a.png)
+
+
+### 내가 Fork한 repository를 원본 repository와 동기화 시키기
+원본 repository가 업데이트 되었다고, 내가 Fork한 repository가 자동으로 업데이트 되지는 않는다.
+master 브랜치 기준으로 이를 동기화 시키기 위한 방법을 알아보면
+먼저, 자신의 repository에 가서 아래 그림 처럼 Pull Request 메뉴를 누른다.
+![](https://user-images.githubusercontent.com/26019796/67108003-0ebea980-f1bd-11e9-88f4-9e62d70e7166.png)
+![](https://user-images.githubusercontent.com/26019796/67108333-d1a6e700-f1bd-11e9-9637-d3d5a5b5ebdf.png)
+![](https://user-images.githubusercontent.com/26019796/67108374-eaaf9800-f1bd-11e9-927a-1dc1b76a318b.png)
+![](https://user-images.githubusercontent.com/26019796/67108615-6c9fc100-f1be-11e9-9643-4ebf1e57e2b6.png)
+
+위 그림의 순서를 거치면, 원본 repository의 master가 내가 Fork한 repository의 master와 동기화가 된다!
+이제, 로컬에서의 master를 이 master와 맞춰주고, 여기에서 feature를 따서 작업하고
+원본 repository에 PR을 날리면 된다!
+
+
 ## Tips - gitkraken 사용  
 
 위에서의 모든 과정들은 터미널에서 git command를 이용해서도 되지만,  
