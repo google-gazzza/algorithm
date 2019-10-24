@@ -11,8 +11,6 @@ class Solution {
     if(arr.length == 0) return false;
 
     Map<Integer,Integer> map = new HashMap<>();
-    int count = 0;
-
     for(int val : arr){
       if(map.containsKey(val) == false){
         map.put(val, 1);
