@@ -1,7 +1,5 @@
 // https://leetcode.com/problems/roman-to-integer/
-// 2번 방법으로 했을 때 아래 결과
-// Runtime: 132 ms, faster than 91.84% of JavaScript online submissions for Roman to Integer.
-// Memory Usage: 40 MB, less than 44.68% of JavaScript online submissions for Roman to Integer.
+// 각각의 성능은 아래에 기법 1~3 까지에 표시
 
 const romanToInt = s => {
   const sLen = s.length
@@ -11,13 +9,41 @@ const romanToInt = s => {
   while (index < sLen) {
     const now = s[index]
     const next = s[index + 1]
-    const {value, passNext} = getNumber(now, next)
+    // const {value, passNext} = getNumber(now, next)
+    // const {value, passNext} = getNumber2(now, next)
+    const {value, passNext} = getNumber3(now, next)
     sum += value
     index += passNext ? 2 : 1
   }
 
   return sum
 }
+
+const symbolObj = {
+  I: 1,
+  V: 5,
+  X: 10,
+  L: 50,
+  C: 100,
+  D: 500,
+  M: 1000
+}
+const exceptionI = ['V', 'X']
+const exceptionX = ['L', 'C']
+const exceptionC = ['D', 'M']
+
+// Runtime: 148 ms, faster than 52.14% of JavaScript online submissions for Roman to Integer.
+// Memory Usage: 39.8 MB, less than 51.06% of JavaScript online submissions for Roman to Integer.
+const getNumber3 = (now, next) => {
+  if ((now === 'I' && (exceptionI.includes(next)))
+    ||(now === 'X' && (exceptionX.includes(next)))
+    ||(now === 'C' && (exceptionC.includes(next)))
+  ) {
+    return {value: symbolObj[next] - symbolObj[now], passNext: true}
+  }
+  return {value: symbolObj[now], passNext: false}
+}
+
 
 // Runtime: 156 ms, faster than 30.28% of JavaScript online submissions for Roman to Integer.
 // Memory Usage: 39.9 MB, less than 48.94% of JavaScript online submissions for Roman to Integer.
