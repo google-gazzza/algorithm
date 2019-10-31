@@ -1,4 +1,6 @@
 // https://leetcode.com/problems/roman-to-integer/
+// Runtime: 128 ms, faster than 95.81% of JavaScript online submissions for Roman to Integer.
+// Memory Usage: 39.3 MB, less than 100% of JavaScript online submissions for Roman to Integer.
 
 const parseRomanToInt = {
   I: 1,
