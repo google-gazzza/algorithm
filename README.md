@@ -1,6 +1,7 @@
 # Coding Challenge
 
 * [MERGE-FLOW](docs/MERGE-FLOW.md)
+* [Codewars READEME](codewars/README.md)
 
 ## Quick start
 
@@ -9,6 +10,8 @@ Forking해서 아래 naming convention 따라서 문제를 만드시고 PR하시
 
 Forking 잘 몰라요? 그럼 위에 *MERGE-FLOW* 링크 참조해요.
 
+
+<br>
 
 ## Directory & File Naming Convention
 
@@ -20,3 +23,10 @@ Forking 잘 몰라요? 그럼 위에 *MERGE-FLOW* 링크 참조해요.
             |- {your-nickname}{file-name}
 ```
 
+<br>
+
+## Platforms
+
+#### Codewars
+가장 다양한 언어 / 문제 풀을 가지고 있는 플랫폼.
+* [Codewars READEME](codewars/README.md)
