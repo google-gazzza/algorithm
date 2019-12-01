@@ -6,3 +6,6 @@ SELECT A.id, A.name,
           FROM toys
          WHERE people_id = A.id) as toy_count
   FROM people AS A
+
+
+
