@@ -2,6 +2,6 @@
 --PostgreSQL 9.6
 
 
-       -- bit±Ê¿Ã         -- char±Ê¿Ã
+       -- bitÍ∏∏Ïù¥          -- charÍ∏∏Ïù¥
 SELECT bit_length(name) + char_length(race) AS calculation
   FROM demographics
