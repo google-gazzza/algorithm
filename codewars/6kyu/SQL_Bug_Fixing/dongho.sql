@@ -2,10 +2,10 @@
 --PostgreSQL 9.6
 --Time: 4831ms Passed: 8 Failed: 0
 
-SELECT date(s.transaction_date) as day,
-       d.name as department,
-       COUNT(s.id) as sale_count
+SELECT date(s.transaction_date) AS Day,
+       d.Name AS Department,
+       COUNT(s.id) AS Sale_count
  FROM department d
-     JOIN sale s on d.id = s.department_id
- group by day, d.name
- order by day asc
+      JOIN sale s ON d.id = s.department_id
+GROUP BY Day, d.name
+ORDER BY Day ASC
