@@ -1,8 +1,10 @@
 """
 https://leetcode.com/problems/remove-duplicates-from-sorted-list/
-Runtime: 40 ms, faster than 84.09% of Python3 online submissions for Remove Duplicates from Sorted List.
-Memory Usage: 12.8 MB, less than 100.00% of Python3 online submissions for Remove Duplicates from Sorted List.
+Runtime: 32 ms, faster than 98.41% of Python3 online submissions for Remove Duplicates from Sorted List.
+Memory Usage: 12.7 MB, less than 100.00% of Python3 online submissions for Remove Duplicates from Sorted List.
 """
+
+
 # Definition for singly-linked list.
 # class ListNode:
 #     def __init__(self, x):
@@ -12,29 +14,13 @@ Memory Usage: 12.8 MB, less than 100.00% of Python3 online submissions for Remov
 class Solution:
     def deleteDuplicates(self, head: ListNode) -> ListNode:
         
-        tempNode = None
-        cur = start = head
+        cur = head
         
-        if not head:
-            return None
-        
-        while cur.next != None:
-            if tempNode:
-                if tempNode.val == cur.next.val:
-                    cur = cur.next
-                else:
-                    tempNode.next = cur.next
-                    tempNode = None
-                    cur = cur.next
+        while(cur):
+            if cur.next is not None and cur.val == cur.next.val:
+                cur.next = cur.next.next
             else:
-                if cur.val == cur.next.val:
-                    tempNode = cur
-                    cur = cur.next
-                else:
-                    cur = cur.next
-
-        if tempNode is not None:
-            tempNode.next = None
-        
-        return start
-        
+                cur = cur.next
+                
+        return head
+       
