@@ -5,9 +5,6 @@ const combine = (n, k) => {
   const resultArr = []
   const nArr = Array.from({length: n}, (_, index) => index + 1)
   const backtrack = (elements, count, loopCount) => {
-    if (count > k) {
-      return
-    }
     if (count === k) {
       resultArr.push([...elements])
       return
