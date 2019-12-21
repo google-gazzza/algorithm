@@ -2,8 +2,8 @@
 --PostgreSQL 9.6
 --Time: 1457ms Passed: 10 Failed: 0
 
--- ���̽� 26©~!~
-INSERT into participants Values('donghokim', 26, 'true');
+-- 참이슬 26 age 데이터 추가 : 
+INSERT INTO participants VALUES('Dongho Kim', 26, 'true');
 --Your code here--
 
 SELECT name, age, attending
