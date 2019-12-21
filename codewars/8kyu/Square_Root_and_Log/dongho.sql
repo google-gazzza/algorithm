@@ -2,7 +2,7 @@
 --PostgreSQL 9.6
 --Time: 1604ms Passed: 11 Failed: 0
 
--- |n : Á¦°ö±Ù, log() : 10·Î±×. ln() : ·Î±×
+-- |n : ì œê³±ê·¼, log() : 10ë¡œê·¸. ln() : ë¡œê·¸
 SELECT |/number1 AS ROOT, 
        log(number2) AS LOG
   FROM decimals
