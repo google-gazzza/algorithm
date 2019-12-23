@@ -1,31 +1,28 @@
-// https://leetcode.com/problems/palindrome-number
-// Runtime: 172 ms, faster than 94.76% of JavaScript online submissions for Palindrome Number.
-// Memory Usage: 45.4 MB, less than 64.65% of JavaScript online submissions for Palindrome Number.
+// Runtime: 32 ms, faster than 5.55% of Java online submissions for Palindrome Number.
+// Memory Usage: 41 MB, less than 5.02% of Java online submissions for Palindrome Number.
 
-/**
- * @param {number} x
- * @return {boolean}
- */
-var isPalindrome = function(x) {
-    const main = {
-        conv : function(e, l) {
-            for (let i = 0; i < l/2; i++) {
-                if (e[i] !== e[l-(i+1)]) {
-                    return false;
-                }
+class Solution {
+    public boolean isPalindrome(int x) {
+        if (x < 0) {
+            return false;
+        }
+
+        ArrayList<String> list = new ArrayList<String>();
+
+        for (String i : Integer.toString(x).split("")){
+            list.add(i);
+        }
+        boolean flag = false;
+
+        for (int i = 0; i < list.size(); i++) {
+            if (list.size() - (i + 1) <= i) {
+                return true;
             }
-            return true;
-        },
-        
-        init : function(e) {
-            if (e < 0) {
+            if (!list.get(i).equals(list.get(list.size() - (i + 1)))) {
                 return false;
-            } else {
-                const array = e.toString().split('');
-                return main.conv(array, array.length);
             }
         }
+
+        return false;
     }
-    
-    return main.init(x);
-};
+}
