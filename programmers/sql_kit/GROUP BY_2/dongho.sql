@@ -1,5 +1,5 @@
 --https://programmers.co.kr/learn/courses/30/lessons/59041
---µΏΈν µΏΉ° Όφ Γ£±β
+--λ™λª… λ™λ¬Ό μ μ°ΎκΈ°
 
 SELECT NAME, COUNT(1) AS COUNT
   FROM ANIMAL_INS
