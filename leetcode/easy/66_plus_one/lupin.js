@@ -6,12 +6,12 @@
  * @return {number[]}
  */
 var plusOne = function(digits) {
-    let digitsLen = digits.length-1;
     let carry = 1;
     let plusOneArr=[];
+    let plusCarry;
 
-    for(let i=digitsLen; i>=0; i--){
-        let plusCarry = digits[i]+carry;
+    for(let i=digits.length-1; i>=0; i--){
+        plusCarry = digits[i]+carry;
         if(plusCarry>9){
             digits[i]=0;
         }else{
@@ -25,4 +25,4 @@ var plusOne = function(digits) {
         plusOneArr.push(carry);
     }
     return plusOneArr.reverse();
-};
+}
