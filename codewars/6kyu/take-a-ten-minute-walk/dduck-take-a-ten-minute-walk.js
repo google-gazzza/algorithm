@@ -8,8 +8,8 @@ const stepToCoordinate = {
 };
 
 const isValidWalk = (steps, count = 0, coordinate = { x: 0, y: 0 }) => {
-  const currentDirection = stepToCoordinate[steps.shift()];
-  coordinate[currentDirection.key] = coordinate[currentDirection.key] + currentDirection.value;
+  const { key, value } = stepToCoordinate[steps.shift()];
+  coordinate[key] += value;
   
   if (count === 9 && steps.length === 0) {
     return coordinate.x === 0 && coordinate.y === 0;
