@@ -1,7 +1,5 @@
 --https://www.codewars.com/kata/59440034e94fae05b2000073/train/sql
 --PostgreSQL 9.6
-
--- mysql
 SELECT prefix || ' ' || first || ' ' || last || ' ' || suffix AS title
   FROM names
 
