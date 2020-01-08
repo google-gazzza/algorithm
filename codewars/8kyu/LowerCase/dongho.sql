@@ -1,7 +1,7 @@
 --https://www.codewars.com/kata/easy-sql-lowercase/train/sql
 --PostgreSQL 9.6
 
--- 1. race¸¦ ¼Ò¹®ÀÚ·Î ¹İÈ¯
+-- 1. raceë¥¼ ì†Œë¬¸ìë¡œ ë°˜í™˜
 SELECT id, name, birthday, lower(race) as race
   FROM demographics
 
