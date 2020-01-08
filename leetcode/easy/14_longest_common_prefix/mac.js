@@ -1,6 +1,6 @@
---https://leetcode.com/problems/longest-common-prefix/
---Runtime: 56 ms, faster than 81.45% of JavaScript online submissions for Longest Common Prefix.
---Memory Usage: 35.1 MB, less than 34.38% of JavaScript online submissions for Longest Common Prefix.
+//https://leetcode.com/problems/longest-common-prefix/
+//Runtime: 56 ms, faster than 81.45% of JavaScript online submissions for Longest Common Prefix.
+//Memory Usage: 35.1 MB, less than 34.38% of JavaScript online submissions for Longest Common Prefix.
 ​
 /**
 * @param {string[]} strs
