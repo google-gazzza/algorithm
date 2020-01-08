@@ -1,0 +1,20 @@
+"""
+https://leetcode.com/problems/find-peak-element
+Runtime: 44 ms, faster than 84.05% of Python3 online submissions for Find Peak Element.
+Memory Usage: 12.9 MB, less than 100.00% of Python3 online submissions for Find Peak Element.
+"""
+
+
+class Solution:
+    def findPeakElement(self, nums: List[int]) -> int:
+        if len(nums) == 1:
+            return 0
+        
+        nums.insert(0, float('-inf'))
+        nums.append(float('-inf'))
+        
+        for i in range(1, len(nums)-1):
+            if nums[i] > nums[i-1] and nums[i] > nums[i+1]:
+                return i-1
+        
+        return -1
