@@ -4,52 +4,33 @@
 
 class Solution {
     public int islandPerimeter(int[][] grid) {
-        
-         int sum = 0;
-        
-         for(int i=0;i < grid.length; i++){
-            for(int j=0;j < grid[i].length; j++ ){
-
-                if(grid[i][j] == 1)
-                    sum += sumRound(grid, i, j);
-            }
-        }
-        
-        return sum;
-        
-    }
-    
-    int sumRound(int[][] island, int yCoordinate, int xCoordinate){
 
         int sum = 0;
 
-        System.out.println(yCoordinate + " " + xCoordinate);
+        for (int i = 0; i < grid.length; i++) {
+            for (int j = 0; j < grid[i].length; j++) {
 
-        //우
-        if(island[yCoordinate].length -1 == xCoordinate || island[yCoordinate][xCoordinate+1] == 0){
-
-            sum += 1;
-        }
-
-        //좌
-        if(xCoordinate == 0 || island[yCoordinate][xCoordinate-1] == 0){
-
-            sum += 1;
-        }
-
-        //상
-        if(yCoordinate == 0 || island[yCoordinate-1][xCoordinate] == 0){
-
-            sum += 1;
-        }
-
-        //하
-        if(island.length -1 == yCoordinate || island[yCoordinate+1][xCoordinate] == 0){
-
-            sum += 1;
+                if (grid[i][j] == 1)
+                    sum += sumRound(grid, i, j);
+            }
         }
 
         return sum;
     }
-    
+
+    int sumRound(int[][] island, int yCoordinate, int xCoordinate) {
+
+        int sum = 0;
+
+        if (island[yCoordinate].length - 1 == xCoordinate || island[yCoordinate][xCoordinate + 1] == 0)
+            sum++;
+        if (xCoordinate == 0 || island[yCoordinate][xCoordinate - 1] == 0)
+            sum++;
+        if (yCoordinate == 0 || island[yCoordinate - 1][xCoordinate] == 0)
+            sum++;
+        if (island.length - 1 == yCoordinate || island[yCoordinate + 1][xCoordinate] == 0)
+            sum++;
+
+        return sum;
+    }
 }
