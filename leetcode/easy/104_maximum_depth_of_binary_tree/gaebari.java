@@ -1,3 +1,7 @@
+// https://leetcode.com/problems/minimum-depth-of-binary-tree
+// Runtime: 0 ms, faster than 100.00% of Java online submissions for Minimum Depth of Binary Tree.
+// Memory Usage: 38.9 MB, less than 98.44% of Java online submissions for Minimum Depth of Binary Tree
+
 /**
  * Definition for a binary tree node.
  * public class TreeNode {
