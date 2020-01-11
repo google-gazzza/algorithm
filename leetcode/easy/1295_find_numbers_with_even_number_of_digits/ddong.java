@@ -4,8 +4,8 @@
 class Solution {
     public int findNumbers(int[] nums) {
 
-        Integer[] integerArray = Arrays.stream( nums ).boxed().toArray( Integer[]::new );
-        List<Integer> numberList = new ArrayList<Integer>(Arrays.asList(integerArray));
+        final Integer[] integerArray = Arrays.stream( nums ).boxed().toArray( Integer[]::new );
+        final List<Integer> numberList = new ArrayList<Integer>(Arrays.asList(integerArray));
 
         final long count = numberList.stream()
                 .map(String::valueOf)
