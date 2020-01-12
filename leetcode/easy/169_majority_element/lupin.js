@@ -1,6 +1,6 @@
 // https://leetcode.com/problems/majority-element/
 // Runtime: 68 ms, faster than 51.15% of JavaScript online submissions for Majority Element.
-// Memory Usage: 37.5 MB, less than 57.14% of JavaScript online submissions for Majority Element.
+// Memory Usage: 37.7 MB, less than 50.00% of JavaScript online submissions for Majority Element.
 /**
  * @param {number[]} nums
  * @return {number}
@@ -9,18 +9,21 @@ var majorityElement = function(nums) {
     let countMap = new Map();
     let numsLen = nums.length;
     let numsHalfLen=Math.ceil(numsLen/2);
-    let valueOfMap; 
+    let value; 
+    let key;
+
     for(let i=0; i<numsLen; i++){
-        if(countMap.has(nums[i])){
-            valueOfMap = countMap.get(nums[i])+1;
-            countMap.set(nums[i], valueOfMap);
+        key = nums[i];
+        if(countMap.has(key)){
+            value = countMap.get(key)+1;
+            countMap.set(key, value);
         }else{
-            valueOfMap = 1;
-            countMap.set(nums[i], 1);
+            value = 1;
+            countMap.set(key, 1);
         }
 
-        if(valueOfMap>=numsHalfLen){
-            return nums[i];
+        if(value>=numsHalfLen){
+            return key;
         }
     }
 };
