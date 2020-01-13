@@ -1,3 +1,8 @@
+//https://leetcode.com/problems/robot-return-to-origin/submissions/
+//Runtime: 8 ms, faster than 49.60% of Java online submissions for Robot Return to Origin.
+//Memory Usage: 38.4 MB, less than 63.51% of Java online submissions for Robot Return to Origin.
+
+
 class Solution {
     public boolean judgeCircle(String moves) {
       int a = 0; 
