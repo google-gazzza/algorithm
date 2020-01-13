@@ -1,6 +1,6 @@
 --https://www.codewars.com/kata/594a9592704e4d21bc000131/train/sql
 --Time: 1367ms Passed: 8 Failed: 0
 
---Mod(m,n) : mÀ» nÀ¸·Î ³ª´« ³ª¸ÓÁö
+--Mod(m,n) : mì„ nìœ¼ë¡œ ë‚˜ëˆˆ ë‚˜ë¨¸ì§€
 SELECT Mod(number1,number2) AS mod
   FROM decimals 
