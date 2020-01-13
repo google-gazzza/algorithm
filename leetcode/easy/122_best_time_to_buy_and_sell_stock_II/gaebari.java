@@ -15,12 +15,9 @@ class Solution {
                         i = j;
                         break;
                     }
-
                 } else {
                     i = j;
                 }
-
-
             }
         }
         return result + max;
