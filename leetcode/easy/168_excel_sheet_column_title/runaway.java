@@ -9,8 +9,9 @@ class Solution {
             n--;
             int v = n % 26;
             n = n / 26;
-            sb.insert(0, (char)(65 + v));
+            sb.append((char)(65 + v));
         }
+        sb.reverse();
         return sb.toString();
     }
 }
