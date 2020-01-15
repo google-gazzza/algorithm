@@ -3,7 +3,7 @@
 
 --1. firstname : tegil
 --2. lastname : astar
---3. Ã¹¹®ÀÚ¸¸ ´ë¹®ÀÚ Ç¥Çö
+--3. ì²«ë¬¸ìë§Œ ëŒ€ë¬¸ì í‘œí˜„
 
 SELECT INITCAP(firstname) || ' ' || INITCAP(lastname) AS shortlist
   FROM Elves 
