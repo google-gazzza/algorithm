@@ -16,7 +16,6 @@ class Solution {
         if(root == null){
             return true;
         }
-
         Stack<TreeNode> stack = new Stack<>();
         stack.add(root.left);
         stack.add(root.right);
