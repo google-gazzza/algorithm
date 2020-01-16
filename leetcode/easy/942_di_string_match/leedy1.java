@@ -17,6 +17,6 @@ class Solution {
         	}
         }
         result[S.length()] =  ('D' ==S.charAt(S.length()-1)) ? d:i;
-		return result;
+	return result;
     }
 }
