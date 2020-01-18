@@ -4,4 +4,4 @@
 --PostgreSQL 9.6
 SELECT id, FirstName, LastName, IsActive
   FROM students
- WHERE IsActive
+ WHERE IsActive = true
