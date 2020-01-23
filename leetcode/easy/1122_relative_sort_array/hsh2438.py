@@ -15,11 +15,11 @@ class Solution:
         counter = Counter(arr1)
         
         for num in arr2:
-            for i in range(counter[num]):
+            for _ in range(counter[num]):
                 results.append(num)
         
         for key in sorted(set(arr1) - set(arr2)):
-            for i in range(counter[key]):
+            for _ in range(counter[key]):
                 results.append(key)
         
         return results
