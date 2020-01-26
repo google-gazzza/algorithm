@@ -9,5 +9,5 @@ class Solution:
         len_bits = len(bits)
         while i < len_bits - 1:
             if bits[i] == 0: i += 1
-            else:  i+= 2
+            else: i+= 2
         return i == len_bits - 1 
