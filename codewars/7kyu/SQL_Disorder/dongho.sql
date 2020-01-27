@@ -2,7 +2,7 @@
 --Time: 12164ms Passed: 2 Failed: 0
 
 --PostgreSQL 9.6
---¹®Á¦ÆÄ¾ÇÀÌ ¾î·Á¿üÀ½. 
+--ë¬¸ì œíŒŒì•…ì´ ì–´ë ¤ì› ìŒ.
 SELECT number
   FROM numbers 
  ORDER BY RANDOM()
