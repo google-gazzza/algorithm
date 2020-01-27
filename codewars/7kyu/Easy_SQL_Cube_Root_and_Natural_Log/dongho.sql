@@ -2,7 +2,7 @@
 --Time: 1392ms Passed: 11 Failed: 0
 
 --PostgreSQL 9.6
--- cbrt : ¼¼Á¦°ö ±Ù, ln : ÀÚ¿¬·Î±×
+-- cbrt : ì„¸ì œê³± ê·¼, ln : ìì—°ë¡œê·¸
 
 SELECT CBRT(number1) AS cuberoot,
        LN(number2)   AS logarithm
