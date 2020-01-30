@@ -16,6 +16,6 @@ SELECT A.id       AS category_id,
                                 id           AS id
                            FROM posts
                          ) AS B ON A.id = B.category_id  
- WHERE B.Cnt <= 2    -- Ä«Å×°í¸®º° 2rowÀÌÇÏ
-    OR B.id  IS NULL  -- Posts¿¡ µ¥ÀÌÅÍ ¾ø´Â °æ¿ì
+ WHERE B.Cnt <= 2     -- ì¹´í…Œê³ ë¦¬ë³„ 2rowì´í•˜
+    OR B.id  IS NULL  -- Postsì— ë°ì´í„° ì—†ëŠ” ê²½ìš°
  ORDER BY a.category, B.Views DESC, B.id 
