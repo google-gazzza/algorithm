@@ -21,7 +21,7 @@ var plusOne = function(digits) {
                     e[i] = e[i] + 1;
                 } 
 
-                if (e[i] == 10) {
+                if (e[i] === 10) {
                     if (bool === false) {
                         bool = true;
                     }
