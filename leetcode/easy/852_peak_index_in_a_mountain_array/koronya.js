@@ -4,16 +4,13 @@
 const peakIndexInMountainArray = A => {
   const ALen = A.length
   let before = Number.MIN_SAFE_INTEGER
-  let isAscend = true
-  
+
   for (let i = 0; i < ALen; i += 1) {
     const num = A[i]
-    if (isAscend === true) {
-      if (num > before) {
-        before = num
-      } else {
-        return i - 1
-      }
+    if (num > before) {
+      before = num
+    } else {
+      return i - 1
     }
   }
   return -1
