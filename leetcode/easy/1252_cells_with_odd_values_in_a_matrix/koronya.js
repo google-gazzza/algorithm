@@ -19,5 +19,5 @@ const oddCells = (n, m, indices) => {
     increaseCol(colNum)
   }
 
-  return arr.reduce((acc, cur) => acc + cur.reduce((acc2, cur2) => cur2 % 2 === 0 ? acc2 : acc2 + 1, 0), 0)
+  return arr.reduce((outerCount, innerArr) => outerCount + innerArr.reduce((innerCount, value) => value % 2 === 0 ? innerCount : innerCount + 1, 0), 0)
 }
