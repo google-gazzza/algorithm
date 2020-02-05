@@ -1,13 +1,13 @@
 // https://leetcode.com/problems/plus-one/
-// Runtime: 56 ms, faster than 68.26% of JavaScript online submissions for Plus One.
-// Memory Usage: 34.1 MB, less than 8.51% of JavaScript online submissions for Plus One.
+// Runtime: 48 ms, faster than 95.97% of JavaScript online submissions for Plus One.
+// Memory Usage: 33.8 MB, less than 65.96% of JavaScript online submissions for Plus One.
 
 /**
  * @param {number[]} digits
  * @return {number[]}
  */
 var plusOne = function(digits) {
-    let main = {
+    const main = {
         init : function(e, l) {
             let arr = [];
             let bool = false;
