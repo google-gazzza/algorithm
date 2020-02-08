@@ -3,9 +3,9 @@
 
 --PostgreSQL 9.6
 
--- octet_length : ¹®ÀÚ¿­ ¹ÙÀÌÆ®¼ö
--- char_length  : ¹®ÀÚ¿­ ¹®ÀÚ ¼ö
--- bit_length   : ¹®ÀÚ¿­ ºñÆ®¼ö
+-- octet_length : ë¬¸ìì—´ ë°”ì´íŠ¸ìˆ˜
+-- char_length  : ë¬¸ìì—´ ë¬¸ì ìˆ˜
+-- bit_length   : ë¬¸ìì—´ ë¹„íŠ¸ìˆ˜
 
 
 SELECT octet_length(number1::TEXT) AS octnum1,
