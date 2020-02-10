@@ -1,13 +1,24 @@
 // https://leetcode.com/problems/replace-elements-with-greatest-element-on-right-side/submissions/
 
-// Runtime: 68 ms, faster than 99.17% of JavaScript online submissions for Replace Elements with Greatest Element on Right Side.
-// Memory Usage: 38.5 MB, less than 100.00% of JavaScript online submissions for Replace Elements with Greatest Element on Right Side.
-// Runtime: 80 ms, faster than 83.63% of JavaScript online submissions for Replace Elements with Greatest Element on Right Side.
-//   Memory Usage: 38.4 MB, less than 100.00% of JavaScript online submissions for Replace Elements with Greatest Element on Right Side.
+// Runtime: 80 ms, faster than 84.43% of JavaScript online submissions for Replace Elements with Greatest Element on Right Side.
+//   Memory Usage: 41 MB, less than 100.00% of JavaScript online submissions for Replace Elements with Greatest Element on Right Side.
+// Runtime: 72 ms, faster than 96.37% of JavaScript online submissions for Replace Elements with Greatest Element on Right Side.
+//   Memory Usage: 40.9 MB, less than 100.00% of JavaScript online submissions for Replace Elements with Greatest Element on Right Side.
 
 
 // functional programming style
-const replaceElements = (arr) => {
+const replaceElements = (arr, index = arr.length - 1) => {
+  if (index === 0) {
+    return [...arr.slice(1), -1];
+  }
+  if (arr[index + 1] > arr[index]) {
+    arr[index] = arr[index + 1];
+  }
+  return replaceElements(arr, index - 1);
+};
+
+// functional programming style
+const replaceElements1 = (arr) => {
   arr.reduceRight((a, c, i, arr) => (arr[i] = arr[i + 1] > arr[i] ? arr[i + 1] : arr[i]));
   return [...arr.slice(1), -1];
 };
