@@ -5,14 +5,6 @@
   * Memory Usage: 52.9 MB, less than 100.00% of Scala online submissions for Unique Email Addresses.
   */
 object Solution {
-    def isValid(email: String): Boolean = {
-        val pattern = "[a-zA-Z0-9_.]+@[a-zA-Z0-9]+.[a-zA-Z]{2,3}[.] {0,1}[a-zA-Z]+".r.findFirstIn(email)
-        pattern match {
-          case Some(_) => true
-          case _       => false
-        }
-    }
-
     def numUniqueEmails(emails: Array[String]): Int = {
         val at   = "@"
         val plus = "+"
