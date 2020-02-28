@@ -6,7 +6,7 @@
   */
   object Solution {
     def uniqueMorseRepresentations(words: Array[String]): Int = {
-        if (words.length == 0) return 0
+        if (words.isEmpty) return 0
         val morseCodeTable = Map[Char, String](
           'a' -> ".-",
           'b' -> "-...",
@@ -37,7 +37,7 @@
         )
 
         var uniqueMorseCodes = scala.collection.mutable.Set[String]()
-        words.foreach { word =>
+        words.toSet.toArray.foreach { word =>
           var result = ""
           word.map(result += morseCodeTable.get(_).get)
           uniqueMorseCodes += result
