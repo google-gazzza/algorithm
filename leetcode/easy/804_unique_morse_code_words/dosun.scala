@@ -5,36 +5,37 @@
   * Memory Usage: 52.9 MB, less than 100.00% of Scala online submissions for Unique Morse Code Words.
   */
 object Solution {
+    val morseTable = List(
+           ".-",
+           "-...",
+           "-.-.",
+           "-..",
+           ".",
+           "..-.",
+           "--.",
+           "....",
+           "..",
+           ".---",
+           "-.-",
+           ".-..",
+           "--",
+           "-.",
+           "---",
+           ".--.",
+           "--.-",
+           ".-.",
+           "...",
+           "-",
+           "..-",
+           "...-",
+           ".--",
+           "-..-",
+           "-.--",
+           "--..")
+
     def uniqueMorseRepresentations(words: Array[String]): Int = {
         if (words.isEmpty) return 0
-        val morseTable = List(
-          ".-",
-          "-...",
-          "-.-.",
-          "-..",
-          ".",
-          "..-.",
-          "--.",
-          "....",
-          "..",
-          ".---",
-          "-.-",
-          ".-..",
-          "--",
-          "-.",
-          "---",
-          ".--.",
-          "--.-",
-          ".-.",
-          "...",
-          "-",
-          "..-",
-          "...-",
-          ".--",
-          "-..-",
-          "-.--",
-          "--.."
-        )
+        
         var uniqueMorseCodes = scala.collection.mutable.Set[String]()
         words.toSet.toArray.foreach { word =>
           var result = ""
