@@ -1,45 +1,44 @@
 /**
   * https://leetcode.com/problems/unique-morse-code-words/
   * 
-  * Runtime: 496ms, faster than 20.00% of Scala online submissions for Unique Morse Code Words.
+  * Runtime: 492ms, faster than 40.00% of Scala online submissions for Unique Morse Code Words.
   * Memory Usage: 52.9 MB, less than 100.00% of Scala online submissions for Unique Morse Code Words.
   */
-  object Solution {
+object Solution {
     def uniqueMorseRepresentations(words: Array[String]): Int = {
         if (words.isEmpty) return 0
-        val morseCodeTable = Map[Char, String](
-          'a' -> ".-",
-          'b' -> "-...",
-          'c' -> "-.-.",
-          'd' -> "-..",
-          'e' -> ".",
-          'f' -> "..-.",
-          'g' -> "--.",
-          'h' -> "....",
-          'i' -> "..",
-          'j' -> ".---",
-          'k' -> "-.-",
-          'l' -> ".-..",
-          'm' -> "--",
-          'n' -> "-.",
-          'o' -> "---",
-          'p' -> ".--.",
-          'q' -> "--.-",
-          'r' -> ".-.",
-          's' -> "...",
-          't' -> "-",
-          'u' -> "..-",
-          'v' -> "...-",
-          'w' -> ".--",
-          'x' -> "-..-",
-          'y' -> "-.--",
-          'z' -> "--.."
+        val morseTable = List(
+          ".-",
+          "-...",
+          "-.-.",
+          "-..",
+          ".",
+          "..-.",
+          "--.",
+          "....",
+          "..",
+          ".---",
+          "-.-",
+          ".-..",
+          "--",
+          "-.",
+          "---",
+          ".--.",
+          "--.-",
+          ".-.",
+          "...",
+          "-",
+          "..-",
+          "...-",
+          ".--",
+          "-..-",
+          "-.--",
+          "--.."
         )
-
         var uniqueMorseCodes = scala.collection.mutable.Set[String]()
         words.toSet.toArray.foreach { word =>
           var result = ""
-          word.map(result += morseCodeTable.get(_).get)
+          word.map(w => result += morseTable(w.toInt - 97))
           uniqueMorseCodes += result
         }
         uniqueMorseCodes.size
