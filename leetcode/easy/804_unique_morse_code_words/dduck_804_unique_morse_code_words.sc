@@ -48,4 +48,10 @@ object Solution {
 }
 
 
+val t0 = System.currentTimeMillis()
 println(Solution.uniqueMorseRepresentations(Array("gin", "zen", "gig", "msg")))
+val t1 = System.currentTimeMillis()
+println(s"Completed in ${t1 - t0} ms")
+
+// completed in 4 ms
+// completed in 5 ms
