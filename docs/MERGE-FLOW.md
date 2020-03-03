@@ -11,7 +11,7 @@ ex> 70_climbing_stairs
 leetcode가 아닌 다른 곳의 문제인 경우, 다르게 생성  
 ex> codewars_sum_of_odd_numbers,  codility_blah_blah  
 자신의 github ID나 닉넴 등 자신을 나타낼 수 있는 이름으로 파일을 만든다.  
-ex> dosun.py,     gaebari.java,    etcetc.cpp,   blahblah~~~  
+ex> dosun.py,     koronya.js,    etcetc.cpp,   blahblah~~~  
 단, 이미 다른 사람이 해당 문제를 풀어서 폴더가 만들어져 있으면, 그 폴더 안에 자신의 파일만 추가 생성한다.  
 문제를 풀이하되,  
 파일의 제일 위 주석에 아래와 같이 문제의 URL, 해당 풀이가 걸린 시간, 메모리에 대해서 leetcode가 보여주는 결과를 붙여넣기 한다.  
