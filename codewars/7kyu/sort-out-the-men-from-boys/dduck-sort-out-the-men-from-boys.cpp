@@ -23,7 +23,7 @@ vector<int> menFromBoys(vector<int> values) {
     }
 
     std::sort(even.begin(), even.end());
-    std::sort(odd.begin(), odd.end(), std::greater<int>());
+    std::sort(odd.begin(), odd.end(), [](int a, int b) { return a > b; });
 
     even.insert(even.end(), odd.begin(), odd.end());
 
