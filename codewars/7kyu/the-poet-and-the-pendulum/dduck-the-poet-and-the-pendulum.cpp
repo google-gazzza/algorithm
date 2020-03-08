@@ -2,7 +2,7 @@
 
 #include <iostream>
 #include <vector>
-#include <list>
+#include <deque>
 #include <algorithm>
 
 using namespace std;
@@ -16,7 +16,7 @@ void printVector(const std::vector<int>& values) {
 vector<int> Pendulum(vector<int> values) {
     sort(values.begin(), values.end());
 
-    std::list<int> result = {};
+    std::deque<int> result = {};
     bool flag = true;
 
     for (auto v: values) {
@@ -33,7 +33,7 @@ vector<int> Pendulum(vector<int> values) {
 
 int main() {
 
-    printVector(Pendulum(std::vec{5, 4, 2, 1, 2, 3}));
+    printVector(Pendulum(vec{5, 4, 2, 1, 2, 3}));
 
     return 0;
 }
