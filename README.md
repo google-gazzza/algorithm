@@ -11,8 +11,6 @@ Forking해서 아래 naming convention 따라서 문제를 만드시고 PR하시
 Forking 잘 몰라요? 그럼 위에 *MERGE-FLOW* 링크 참조해요.
 
 
-<br>
-
 ## Directory & File Naming Convention
 
 ```
@@ -22,8 +20,6 @@ Forking 잘 몰라요? 그럼 위에 *MERGE-FLOW* 링크 참조해요.
         |- {quiz-name}
             |- {your-nickname}{file-name}
 ```
-
-<br>
 
 ## Platforms
 
