@@ -8,7 +8,7 @@
 using namespace std;
 using vec = vector<int>;
 
-void printVector(vector<int> values) {
+void printVector(const std::vector<int>& values) {
     for (std::vector<int>::const_iterator i = values.begin(); i != values.end(); ++i)
         std::cout << *i << ' ';
 }
@@ -33,7 +33,7 @@ vector<int> Pendulum(vector<int> values) {
 
 int main() {
 
-    printVector(Pendulum(vec{5, 4, 2, 1, 2, 3}));
+    printVector(Pendulum(std::vec{5, 4, 2, 1, 2, 3}));
 
     return 0;
 }
