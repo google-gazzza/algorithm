@@ -20,11 +20,14 @@ class Solution:
         for query in queries:
             f_queries.append(f(query))
             
+#        f_words = []
+#        for word in words:
+#            f_words.append(f(word))
+        
+#        f_words.sort()
         f_words = []
         for word in words:
-            f_words.append(f(word))
-        
-        f_words.sort()
+            bisect.insort_left(f_words, f(word))
         
         results = []
         for f_query in f_queries:
