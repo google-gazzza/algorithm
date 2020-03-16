@@ -11,8 +11,3 @@ class Solution:
         for i in range(32):
             count += (xor >> i) & 1
         return count
-
-
-
-
-
