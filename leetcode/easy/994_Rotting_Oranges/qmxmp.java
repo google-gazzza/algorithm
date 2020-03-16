@@ -24,26 +24,26 @@ class Solution {
 		while (!q.isEmpty()) {
 			Queue<Location> newq = new LinkedList<Location>();
 			boolean notStarted = true;
-			while ( notStarted || !q.isEmpty()) {
+			while (notStarted || !q.isEmpty()) {
 				notStarted = false;
 				Location l = (Location) q.poll();
 				Location t;
-				
-				t=rott(grid, l, 0, 1);
-				if(t!=null)
+
+				t = rott(grid, l, 0, 1);
+				if (t != null)
 					newq.add(t);
-				t=rott(grid, l, 0, -1);
-				if(t!=null)
+				t = rott(grid, l, 0, -1);
+				if (t != null)
 					newq.add(t);
-				t=rott(grid, l, -1, 0);
-				if(t!=null)
+				t = rott(grid, l, -1, 0);
+				if (t != null)
 					newq.add(t);
-				t=rott(grid, l, 1, 0);
-				if(t!=null)
+				t = rott(grid, l, 1, 0);
+				if (t != null)
 					newq.add(t);
-				
+
 			}
-			q=newq;
+			q = newq;
 			day++;
 		}
 
@@ -57,7 +57,7 @@ class Solution {
 					return -1;
 			}
 		}
-		return day<0?0:day;
+		return day < 0 ? 0 : day;
 	}
 
 	private Location rott(int[][] grid, Location l, int i, int j) {
@@ -65,11 +65,11 @@ class Solution {
 			return null;
 		if (l.i + i == grid.length || l.j + j == grid[0].length)
 			return null;
-		if(	grid[l.i + i][l.j + j]==0)
+		if (grid[l.i + i][l.j + j] == 0)
 			return null;
-		if(	grid[l.i + i][l.j + j]==2)
+		if (grid[l.i + i][l.j + j] == 2)
 			return null;
-		
+
 		grid[l.i + i][l.j + j] = 2;
 
 		return new Location(l.i + i, l.j + j);
