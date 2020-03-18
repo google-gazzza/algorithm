@@ -8,7 +8,7 @@ object Solution {
   def searchInsert(nums: Array[Int], target: Int): Int = {
     val numsSize = nums.length
     if (target > nums.last) {
-      return nums.length
+      return numsSize
     }
 
     for (i <- 0.until(numsSize)) {
