@@ -7,7 +7,10 @@ class Solution {
         int count = s.length() -1;
 
         for (char c: s.toCharArray()) {
-            result += (Math.pow(26, count) * (c - 'A' +1)) > 0 ? (Math.pow(26, count) * (c - 'A' +1)) : (c - 'A' +1);
+            double powCount = Math.pow(26, count);
+            int charNum = c - 'A' +1;
+
+            result += (powCount * charNum) > 0 ? (powCount * charNum) : charNum;
             count--;
         }
         return result;
