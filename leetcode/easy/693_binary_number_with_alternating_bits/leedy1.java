@@ -2,7 +2,7 @@
 * https://leetcode.com/problems/binary-number-with-alternating-bits/
 * Runtime: 1 ms, faster than 14.30% of Java online submissions for Binary Number with Alternating Bits.
 * Memory Usage: 36.5 MB, less than 12.50% of Java online submissions for Binary Number with Alternating Bits.
-/
+*/
 
 class Solution {
     public boolean hasAlternatingBits(int n) {
