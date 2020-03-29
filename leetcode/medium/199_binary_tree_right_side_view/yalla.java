@@ -1,7 +1,6 @@
 //https://leetcode.com/problems/binary-tree-right-side-view/
 //Runtime: 1 ms, faster than 75.35% of Java online submissions for Binary Tree Right Side View.
 //Memory Usage: 38.1 MB, less than 5.88% of Java online submissions for Binary Tree Right Side View.
-//
 
 /**
  * Definition for a binary tree node.
