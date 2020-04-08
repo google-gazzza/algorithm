@@ -10,7 +10,8 @@
   */
 object Solution {
   def solution(a: Array[Int], k: Int): Array[Int] = {
-    if (a.length == k) return a
-    a.slice(k-1, a.length) ++ a.slice(0, k-1)
+    val aSize = a.length 
+    if (aSize == k) return a
+    a.slice(k-1, aSize) ++ a.slice(0, k-1)
   }
 }
