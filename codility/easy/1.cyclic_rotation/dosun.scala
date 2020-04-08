@@ -11,6 +11,6 @@
 object Solution {
   def solution(a: Array[Int], k: Int): Array[Int] = {
     if (a.length == k) return a
-    a.slice(k-1, a.length) ++ a.slice(0, k-1).toList
+    a.slice(k-1, a.length) ++ a.slice(0, k-1)
   }
 }
