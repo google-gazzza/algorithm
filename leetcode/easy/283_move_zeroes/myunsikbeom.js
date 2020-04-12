@@ -14,5 +14,4 @@ var moveZeroes = function(nums) {
         }
         
     }
-    
-};
+
