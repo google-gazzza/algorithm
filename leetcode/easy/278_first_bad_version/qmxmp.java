@@ -1,7 +1,7 @@
 //Runtime: 13 ms, faster than 35.37% of Java online submissions for First Bad Version.
 //Memory Usage: 36.2 MB, less than 5.63% of Java online submissions for First Bad Version.
 
-class Solution extends VersionControl {
+class N278_First_Bad_Version_Solution extends VersionControl {
 
 	public int firstBadVersion(int n) {
 		return findfirstBadVersionRecursivly(1, n);
