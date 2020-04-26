@@ -1,42 +1,17 @@
 /**
  * @param {number[]} nums
- * @return {number}
+ * @return {void} Do not return anything, modify nums in-place instead.
  */
-//Runtime: 64 ms, faster than 64.23% of JavaScript online submissions for Majority Element.
-//Memory Usage: 38.5 MB, less than 7.14% of JavaScript online submissions for Majority Element.
-
-var majorityElement = function(nums) {
-    var result = {};
-
-    var maj_arr = [{
-        id: nums[0],
-        len: 1
-    }];
-    for (var i = 1; i < nums.length; i++) {
-        for (var j = 0; j < maj_arr.length; j++) {
-            var iNum = nums[i];
-            if (iNum === maj_arr[j].id) {
-                maj_arr[j].len += 1;
-                break;
-            } else if (j === maj_arr.length - 1 && iNum !== maj_arr[j].id) {
-                maj_arr.push({
-                    id: nums[i],
-                    len: 1
-                });
-                break;
-            }
+//Runtime: 60 ms, faster than 85.37% of JavaScript online submissions for Move Zeroes.
+//Memory Usage: 35.9 MB, less than 34.04% of JavaScript online submissions for Move Zeroes.
+var moveZeroes = function(nums) {
+    
+    
+    for(var i=nums.length-1;i>=0;i--){
+        if(nums[i] === 0){
+            nums.splice(i,1);
+            nums.push(0);
         }
+        
     }
-    
-    result = maj_arr[0];
-    
-    for (var i = 1; i < maj_arr.length; i++) {
-        if (result.len < maj_arr[i].len) {
-            result = null;
-            result = maj_arr[i];
-        }
 
-    }
-    
-    return result.id;
-};
