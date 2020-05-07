@@ -13,8 +13,5 @@ var getSum = function(a, b) {
         a ^= b;
         b = carry << 1;
     }
-    
-    
-    Memory Usage: 33.8 MB, less than 40.00% of JavaScript online submissions for Sum of Two Integers.
     return a;
 };
