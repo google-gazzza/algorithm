@@ -4,7 +4,8 @@
 
 class Solution {
     public String shortestCompletingWord(String licensePlate, String[] words) {
-         licensePlate = licensePlate.toLowerCase();String result = "abcdefghijklmnotqrstuvw";
+        licensePlate = licensePlate.toLowerCase();
+        String result = "abcdefghijklmnotqrstuvw";
 
         licensePlate = licensePlate.toLowerCase();
         char[] tempArr = licensePlate.toCharArray();
