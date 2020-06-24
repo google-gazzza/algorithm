@@ -12,7 +12,7 @@ class Solution {
 
             result += (powCount * charNum) > 0 ? (powCount * charNum) : charNum;
             count--;
-        }
+        }valid-sudoku
         return result;
     }
 }
