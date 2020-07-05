@@ -1,5 +1,6 @@
 # https://www.acmicpc.net/problem/11047
-# 동전 0
+# 메모리       시간
+# 29380KB     64ms
 input_data = input().split(' ')
 coinNumber = int(input_data[0])
 targetMoney = int(input_data[1])
