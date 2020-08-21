@@ -4,7 +4,7 @@
 // https://www.codewars.com/kata/58daa7617332e59593000006/
 // approach: https://blog.devserum.com/data-structures-and-algorithms/coding-challenges/codewars/8kyu/watermelon
 
-const findLongest = (array) => Math.max(...array);
+const findLongest = (array) => array.sort((a, b) => String(b).length - String(a).length)[0];
 
 
 
