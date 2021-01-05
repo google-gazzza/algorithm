@@ -12,7 +12,7 @@ interface DirectionalFunction {
 
 const getK = (arr: number[][], row: number, col: number) => {
   let count: number = 1
-  let sum = arr[row][col]
+  let sum: number = arr[row][col]
   const downLimit: number = arr.length - 1
   const rightLimit: number = arr[0].length - 1
   const invalidLeft: boolean = col === 0
