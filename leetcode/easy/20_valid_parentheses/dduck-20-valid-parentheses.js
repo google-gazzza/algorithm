@@ -50,22 +50,48 @@ Output: false
 
 ## solution
 
- */
+
 
 /**
  * @param {string} s
  * @return {boolean}
  */
+const isValid = function (s) {
+  const targetPatters = ['()', '[]', '{}'];
+  let isMatched = false;
+  
+  targetPatters.forEach((e) => {
+    if (s.indexOf(e) !== -1) {
+      isMatched = true;
+      s = s.replace(e, '');
+    }
+  });
+  
+  return isMatched ? isValid(s) : s.length === 0;
+};
 
-const isValid = (s) => {
+test('test valid', () => {
+  expect(isValid('()')).toBeTruthy();
+  expect(isValid('()[]{}')).toBeTruthy();
+  expect(isValid('(]')).toBeFalsy();
+  expect(isValid('([)]')).toBeFalsy();
+  expect(isValid('{[]}')).toBeTruthy();
+});
+
+
+const isValidRegExp = (s) => {
   if (s.match(/(\(\))|(\{\})|(\[\])/g)) {
     s = s.replace(/(\(\))|(\{\})|(\[\])/g, '');
-    return isValid(s);
+    return isValidRegExp(s);
   }
   
   return s.length === 0 ? true : false;
 };
 
-// test
-isValid('()[]{}'); //?
-isValid('([)]'); //?
+test('test valid', () => {
+  expect(isValidRegExp('()')).toBeTruthy();
+  expect(isValidRegExp('()[]{}')).toBeTruthy();
+  expect(isValidRegExp('(]')).toBeFalsy();
+  expect(isValidRegExp('([)]')).toBeFalsy();
+  expect(isValidRegExp('{[]}')).toBeTruthy();
+});
