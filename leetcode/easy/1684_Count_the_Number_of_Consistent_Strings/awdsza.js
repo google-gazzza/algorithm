@@ -4,6 +4,7 @@
  * @return {number}
  */
 /*
+내가 풀던 방식. 
 Runtime: 148 ms, faster than 23.90% of JavaScript online submissions for Count the Number of Consistent Strings.
 Memory Usage: 47.2 MB, less than 98.41% of JavaScript online submissions for Count the Number of Consistent Strings.
 */
