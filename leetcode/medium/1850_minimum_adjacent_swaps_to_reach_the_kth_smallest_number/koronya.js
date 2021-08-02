@@ -90,7 +90,7 @@ const getMinSwaps = function (num, k) {
 
 // getMinSwaps('5489355142', 4) //?
 // getMinSwaps('11112', 4) //?
-getMinSwaps('00123', 1) //?
+// getMinSwaps('00123', 1) //?
 // getMinSwaps('059', 5) //?
 
 // 5489355 142
