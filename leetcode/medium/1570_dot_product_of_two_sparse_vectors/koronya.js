@@ -1,4 +1,4 @@
-// [Medium] 1570. Dot Product of Two Sparse Vectors
+// 랴
 // 1570_dot_product_of_two_sparse_vectors
 
 // https://leetcode.com/problems/dot-product-of-two-sparse-vectors
