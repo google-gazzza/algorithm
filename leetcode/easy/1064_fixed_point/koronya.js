@@ -1,4 +1,4 @@
-// [Easy] 1064. Fixed Point
+//  
 // 1064_fixed_point
 
 // https://leetcode.com/problems/fixed-point
