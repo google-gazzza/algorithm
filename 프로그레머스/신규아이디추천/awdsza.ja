@@ -1,0 +1,25 @@
+function solution(new_id) {
+    let answer = new_id;
+    answer = answer.toLowerCase();
+    answer = answer.replace(/[^a-z|0-9|\-|\_|\.]/gi,'');
+    answer = answer.replace(/\.{2,}/gi,'.');
+    answer = answer.charAt(0) === '.' ? answer.substring(1) : answer;
+    answer = answer.charAt(answer.length-1) === '.' ? answer.substring(0,answer.length-1) : answer;
+    if(!answer) {
+        answer = 'a';
+    }
+    if(answer.length > 15){
+        answer = answer.substring(0,15);
+    }
+    answer = answer.charAt(answer.length-1) === '.' ? answer.substring(0,answer.length-1) : answer;
+    if(answer.length < 3){
+        const last_str = answer.charAt(answer.length-1);
+        while(answer.length < 3){
+            answer = answer.concat(last_str);
+        }
+    }
+    
+    
+    
+    return answer;
+}
