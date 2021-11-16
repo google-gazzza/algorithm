@@ -18,10 +18,7 @@
      만약 제거 후 마침표(.)가 new_id의 끝에 위치한다면 끝에 위치한 마침표(.) 문자를 제거합니다.
 7단계 new_id의 길이가 2자 이하라면, new_id의 마지막 문자를 new_id의 길이가 3이 될 때까지 반복해서 끝에 붙입니다.
  ```
-
-
  예를 들어, new_id 값이 "...!@BaT#*..y.abcdefghijklm" 라면, 위 7단계를 거치고 나면 new_id는 아래와 같이 변경됩니다.
-
 1단계 대문자 'B'와 'T'가 소문자 'b'와 't'로 바뀌었습니다.
 
 ```
@@ -69,29 +66,43 @@ new_id에 나타날 수 있는 특수문자는 ```-_.~!@#$%^&*()=+[{]}:?,<>/``` 
 ```
 function solution(new_id) {
     let answer = new_id;
-    answer = answer.toLowerCase();
-    answer = answer.replace(/[^a-z|0-9|\-|\_|\.]/gi,'');
-    answer = answer.replace(/\.{2,}/gi,'.');
-    answer = answer.charAt(0) === '.' ? answer.substring(1) : answer;
-    answer = answer.charAt(answer.length-1) === '.' ? answer.substring(0,answer.length-1) : answer;
-    if(!answer) {
+    answer = answer.toLowerCase();//1단계 : 대문자를 소문자로 변환
+    answer = answer.replace(/[^a-z|0-9|\-|\_|\.]/gi,''); // 2단계 알파벳 소문자, 숫자, '-', '_', '.' 문자를 제외하고 제거 
+    answer = answer.replace(/\.{2,}/gi,'.'); // 3단계 마침표가 2개 이상인 문자는 전부 마침표 1개만 남기고 제거
+    answer = answer.charAt(0) === '.' ? answer.substring(1) : answer; //4단계 맨처음 문자열에 마침표가있다면 제거
+    answer = answer.charAt(answer.length-1) === '.' ? answer.substring(0,answer.length-1) : answer; //4단계 맨 마지막 문자열에 마침표가 있다면 제거
+    if(!answer) { //5단계 문자열이 빈값이면 a로 채움
         answer = 'a';
     }
-    if(answer.length > 15){
+    if(answer.length > 15){ //6단계 길이가 16자 이상이면, 첫 15개의 문자를 제외한 나머지 문자들을 모두 제거
         answer = answer.substring(0,15);
     }
-    answer = answer.charAt(answer.length-1) === '.' ? answer.substring(0,answer.length-1) : answer;
-    if(answer.length < 3){
+    answer = answer.charAt(answer.length-1) === '.' ? answer.substring(0,answer.length-1) : answer; //6단계 끝에 마침표가있다면 제거 
+    if(answer.length < 3){ //길이가 3글자 미만이면 마지막에있는 문자열로 3자리가 될때까지 채움.
         const last_str = answer.charAt(answer.length-1);
         while(answer.length < 3){
             answer = answer.concat(last_str);
         }
     }
-    
-    
-    
     return answer;
 }
 ```
-
-## [참고URL](https://programmers.co.kr/learn/courses/30/lessons/72410?language=javascript)
+## 3.리펙토링(기타 풀이 문제 참고)
+다른분들의 풀이를 전체적으로 확인을 해본 결과 메서드 체이닝을 통해 간결한 코드를 작성하는것이 인상깊어서 기존에 작성했던 정규식에 체이닝을 추가하여 작성했다.
+거기에 String 함수중 padEnd같은 함수도 처음 봤다. padEnd에 대해 검색을 해보니 ORACLE의 LPAD,RPAD 처럼 주어진 길이만큼 새로운 문자열로 채우는 함수다. (하지만 IE에서 지원하지않아서, 자주 사용하지는 않을꺼 같다^^;)
+```
+function solution(new_id) {
+    new_id = new_id.toLowerCase() //1단계 : 대문자를 소문자로 변환
+            .replace(/[^a-z|0-9|\-|\_|\.]/g,'') // 2단계 알파벳 소문자, 숫자, '-', '_', '.' 문자를 제외하고 제거 
+            .replace(/\.{2,}/g,'.') // 3단계 마침표가 2개 이상인 문자는 전부 마침표 1개만 남기고 제거
+            .replace(/^\.|\.$/g,'') //4단계 마침표(.)가 처음이나 끝에 위치한다면 제거
+            .replace(/^$/g,'a')//5단계 문자열이 빈값이면 a로 채움
+            .slice(0,15)//6단계 길이가 16자 이상이면, 첫 15개의 문자를 제외한 나머지 문자들을 모두 제거
+            .replace(/\.$/g,'')//6단계 끝에 마침표가있다면 제거 ;
+    new_id = new_id.padEnd(3,new_id.charAt(new_id.length-1));//7단계 길이가 3글자 미만이면 마지막에있는 문자열로 3자리가 될때까지 채움.
+    return new_id;
+}
+```
+## 참고 URL
+1. [문제정보 URL](https://programmers.co.kr/learn/courses/30/lessons/72410?language=javascript)
+2. [padEnd](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/padEnd)
