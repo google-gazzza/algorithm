@@ -6,13 +6,13 @@
 // Memory Usage: 44.9 MB, less than 44.44% of TypeScript online submissions for Design A Leaderboard.
 
 class Leaderboard {
-  scoreMap
+  scoreMap: Map<number, number>
   constructor() {
     this.scoreMap = new Map()
   }
 
   addScore(playerId: number, score: number): void {
-    const prevScore = this.scoreMap.get(playerId) || 0
+    const prevScore: number = this.scoreMap.get(playerId) || 0
     this.scoreMap.set(playerId, prevScore + score)
   }
 
