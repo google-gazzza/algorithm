@@ -2,16 +2,12 @@
 // 2164_sort_even_and_odd_indices_independently
 
 // https://leetcode.com/problems/sort-even-and-odd-indices-independently
-// Runtime: 95 ms, faster than 81.36% of JavaScript online submissions for Sort Even and Odd Indices Independently.
-// Memory Usage: 44.1 MB, less than 92.09% of JavaScript online submissions for Sort Even and Odd Indices Independently.
+// Runtime: 122 ms, faster than 77.78% of TypeScript online submissions for Sort Even and Odd Indices Independently.
+// Memory Usage: 45 MB, less than 77.78% of TypeScript online submissions for Sort Even and Odd Indices Independently.
 
-/**
- * @param {number[]} nums
- * @return {number[]}
- */
-const sortEvenOdd = function (nums) {
-  const oddArr = []
-  const evenArr = []
+function sortEvenOdd(nums: number[]): number[] {
+  const oddArr: number[] = []
+  const evenArr: number[] = []
   nums.forEach((num, index) => {
     if (index % 2 !== 0) {
       oddArr.push(num)
@@ -23,8 +19,8 @@ const sortEvenOdd = function (nums) {
   evenArr.sort((a, b) => a - b)
   const oddArrLen = oddArr.length
   const evenArrLen = evenArr.length
-  const resultArr = []
-  for (let i = 0; i < oddArrLen; i += 1 || 0) {
+  const resultArr: number[] = []
+  for (let i: number = 0; i < oddArrLen; i += 1) {
     resultArr.push(evenArr[i])
     resultArr.push(oddArr[i])
   }
@@ -34,6 +30,3 @@ const sortEvenOdd = function (nums) {
 
   return resultArr
 }
-
-sortEvenOdd([4, 1, 2, 3])
-sortEvenOdd([4, 1, 2, 3, 9])
