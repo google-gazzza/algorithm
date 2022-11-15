@@ -1,32 +1,47 @@
 /*
 1863-sum-of-all-subset-xor-totals
 leetcode/easy/1863. Sum of All Subset XOR Totals
-Difficulty: easy
 URL: https://leetcode.com/problems/sum-of-all-subset-xor-totals/
 */
 
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
-func uniqueOccurrences(arr []int) bool {
-	m := make(map[int]int)
+func xorSum(nums []int) int {
+	xorResult := 0
 
-	for _, v := range arr {
-		m[v]++
+	for i := 0; i < len(nums); i++ {
+		xorResult ^= nums[i]
 	}
 
-	m2 := make(map[int]bool)
+	return xorResult
+}
 
-	for _, v := range m {
-		m2[v] = true
+func backtracking(nums []int, path []int, xorResult *int) {
+	*xorResult += xorSum(path)
+
+	for i := 0; i < len(nums); i++ {
+		backtracking(nums[i+1:], append(path, nums[i]), xorResult)
+	}
+}
+
+func subsetXORSum(nums []int) int {
+	xorResult := 0
+
+	for i := 0; i < len(nums); i++ {
+		backtracking(nums[i+1:], []int{nums[i]}, &xorResult)
 	}
 
-	return len(m) == len(m2)
+	return xorResult
 }
 
 func main() {
-	fmt.Println("hello world")
+	nums := []int{1, 3}
+	fmt.Println(subsetXORSum(nums))
+	//Output: 6
+
+	nums = []int{5, 1, 6}
+	fmt.Println(subsetXORSum(nums))
+	//Output: 28
 }
