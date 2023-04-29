@@ -2,7 +2,23 @@
 // combine-objects
 // https://www.codewars.com/kata/56bd9e4b0d0b64eaf5000819/train/javascript
 
-function combine() {
+const combine = (...rest) => {
+  const [first, ...arr] = rest
+  const result = { ...first }
+  arr.forEach((obj) => {
+    Object.entries(obj).forEach(([key, value]) => {
+      if (result[key]) {
+        result[key] += value
+      } else {
+        result[key] = value
+      }
+    })
+  })
+
+  return result
+}
+
+function combine2() {
   const [first, ...rest] = arguments
   const result = { ...first }
   rest.forEach((obj) => {
