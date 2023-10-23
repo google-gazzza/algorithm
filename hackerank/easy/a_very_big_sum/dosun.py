@@ -1,26 +1,37 @@
-"""https://www.hackerrank.com/challenges/a-very-big-sum/problem
-"""
-#!/bin/python3
+class Solution:
+    def searchRange(self, nums, target: int):
+        n = len(nums)
+        l, r = 0, n-1
+        result = []
+        def search(left, right):
+            if right-left == 1 or right-left == 0:
+                print(1, right,left)
+                if nums[left] ==target:
+                    result.append(left)
+                if nums[right] == target:
+                    result.append(right)
+                return
+            if left == right:
+                print(2, right, left)
+                if nums[left] == target:
+                    result.append(left)
+                return
 
-import math
-import os
-import random
-import re
-import sys
+            mid = left + (right - left) // 2
 
-# Complete the aVeryBigSum function below.
-def aVeryBigSum(ar):
-    return sum(ar)
+            print('nums, mid', nums, mid, left, right)
+            # if mid == -1:
+            #     return
+            if nums[mid] == target:
+                result.append(mid)
+            search(left, mid)
+            search(mid+1, right)
 
-if __name__ == '__main__':
-    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+        search(l, r)
+        # print(result)
+        return list(set(result))
 
-    ar_count = int(input())
 
-    ar = list(map(int, input().rstrip().split()))
 
-    result = aVeryBigSum(ar)
-
-    fptr.write(str(result) + '\n')
-
-    fptr.close()
+result = Solution().searchRange([5,7,7,8,8,10], 8)
+print(result)
