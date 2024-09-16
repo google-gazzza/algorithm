@@ -5,7 +5,7 @@
 //Runtime: 60 ms, faster than 70.70% of JavaScript online submissions for Remove Outermost Parentheses.
 //Memory Usage: 36.4 MB, less than 33.33% of JavaScript online submissions for Remove Outermost Parentheses.
 var removeOuterParentheses = function(S) {
-    
+
     let splitparentheses = S.split(''),output= "",parent="",open=0,close=0;
     for(let i=0;i<splitparentheses.length;i++){
         let parentheses = splitparentheses[i];
